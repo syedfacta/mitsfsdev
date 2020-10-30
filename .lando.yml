@@ -1,0 +1,6 @@
+name: facta
+recipe: pantheon
+config:
+  framework: wordpress
+  site: facta
+  id: 5d02b47d-df3c-4a67-89a3-0e6e1af6c036

@@ -1,6 +1,5 @@
-# Example WordPress Composer
+# FACTA EXAMPLE
 
-[![CircleCI](https://circleci.com/gh/pantheon-systems/example-wordpress-composer.svg?style=svg)](https://circleci.com/gh/pantheon-systems/example-wordpress-composer)
 
 This repository is a reference implementation and start state for a modern WordPress workflow utilizing [Composer](https://getcomposer.org/), Continuous Integration (CI), Automated Testing, and Pantheon. Even though this is a good starting point, you will need to customize and maintain the CI/testing set up for your projects.
 
@@ -33,16 +32,12 @@ The `require` section of `composer.json` should be used for any dependencies you
 
 The `require-dev` section should be used for dependencies that are not a part of the web application but are necesarry to build or test the project. Some example are `php_codesniffer` and `phpunit`. Dev dependencies will not be deployed to Pantheon.
 
-If you are just browsing this repository on GitHub, you may not see some of the directories mentioned above, such as `web/wp`. That is because WordPress core and its plugins are installed via Composer and ignored in the `.gitignore` file.
-
-A custom, [Composer version of WordPress for Pantheon](https://github.com/pantheon-systems/wordpress-composer/) is used as the source for WordPress core.
-
 Third party WordPress dependencies, such as plugins and themes, are added to the project via `composer.json`. The `composer.lock` file keeps track of the exact version of dependency. [Composer `installer-paths`](https://getcomposer.org/doc/faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md#how-do-i-install-a-package-to-a-custom-path-for-my-framework-) are used to ensure the WordPress dependencies are downloaded into the appropriate directory.
 
 Non-WordPress dependencies are downloaded to the `/vendor` directory.
 
 ### `.ci`
-This `.ci` directory is where all of the scripts that run on Continuous Integration are stored. Provider specific configuration files, such as `.circle/config.yml` and `.gitlab-ci.yml`, make use of these scripts.
+This `.ci` directory is where all of the scripts that run on Continuous Integration are stored. 
 
 The scripts are organized into subdirectories of `.ci` according to their function: `build`, `deploy`, or `test`.
 
@@ -54,45 +49,13 @@ Steps for building an artifact suitable for deployment. Feel free to add other b
 #### Build Scripts `.ci/deploy`
 Scripts for facilitating code deployment to Pantheon.
 
-- `.ci/deploy/pantheon/create-multidev` creates a new [Pantheon multidev environment](https://pantheon.io/docs/multidev/) for branches other than the default Git branch
+- `.ci/deploy/pantheon/create-multidev` creates a new [Pantheon multidev environment](https://pantheon.io/docs/multidev/) for branches Master, Staging or any other branch prefixing with CI-
   - Note that not all users have multidev access. Please consult [the multidev FAQ doc](https://pantheon.io/docs/multidev-faq/) for details.
-- `.ci/deploy/pantheon/dev-multidev` deploys the built artifact to either the Pantheon `dev` or a multidev environment, depending on the Git branch
-
-#### Automated Test Scripts `.ci/tests`
-Scripts that run automated tests. Feel free to add or remove scripts here depending on your testing needs.
-
-**Static Testing** `.ci/test/static` and `tests/unit`
-Static tests analyze code without executing it. It is good at detecting syntax error but not functionality.
-
-- `.ci/test/static/run` Runs [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) with [WordPress coding standards](https://github.com/WordPress/WordPress-Coding-Standards), PHP Unit, and [PHP syntax checking](https://www.php.net/manual/en/function.php-check-syntax.php).
-- `tests/unit/bootstrap.php` Bootstraps the Composer autoloader
-- `tests/unit/TestAssert.php` An example Unit test. Project specific test files will need to be created in `tests/unit`.
-
-**Visual Regression Testing** `.ci/test/visual-regression`
-Visual regression testing uses a headless browser to take screenshots of web pages and compare them for visual differences.
-
-- `.ci/test/visual-regression/run` Runs [BackstopJS](https://github.com/garris/BackstopJS) visual regression testing.
-- `.ci/test/visual-regression/backstopConfig.js` The [BackstopJS](https://github.com/garris/BackstopJS) configuration file. Setting here will need to be updated for your project. For example, the `pathsToTest` variable determines the URLs to test.
-
-**Behat Testing** `.ci/test/behat` and `tests/behat`
-[Behat](http://behat.org/en/latest/) is an acceptance/end-to-end testing framework written in PHP. It faciliates testing the fully built WordPress site on Pantheon infrastucture. [WordHat](https://wordhat.info/) is used to help with integrating Behat and WordPress.
-
-- `.ci/test/behat/initialize` deletes any existing WordPress user from Behat testing and creates a backup of the environment to be tested
-- `.ci/test/behat/run` sets the `BEHAT_PARAMS` environment variable with dynamic information necessary for Behat and configure it to use wp-cli via [Terminus](https://pantheon.io/docs/terminus/), creates the necessary WordPress user, starts headless Chrome, and runs Behat
-- `.ci/test/behat/cleanup` restores the previously made database backup, deletes the WordPress user used for Behat testing, and saves screenshots taken by Behat
-- `tests/behat/behat-pantheon.yml` Behat configuration file compatible with running tests against a Pantheon site
-- `tests/behat/tests/behat/features` Where Behat test files, with the `.feature` extension, should be stored. The provided example tests will need to be replaced with project specific tests.
-  - `tests/behat/tests/behat/features/visit-homepage.feature` A Behat test file which visits the homepage and verifies a `200` response
-  - `tests/behat/tests/behat/features/admin-login.feature` A Behat test file which logs into the WordPress dashboard as an administrator and verifies acess to new user creation
-  - `tests/behat/tests/behat/features/admin-login.feature` A Behat test file which logs into the WordPress dashboard as an administrator, updates the `blogname` and `blogdescription` settings, clears the Pantheon cache, visits the home page, and verifies the update blog name and description appear.
-
 
 ## Working locally with Lando
 To get started using Lando to develop locally complete these one-time steps. Please note than Lando is an independent product and is not supported by Pantheon. For further assistance please refer to the [Lando documentation](https://docs.devwithlando.io/).
 
-* [Install Lando](https://docs.devwithlando.io/installation/system-requirements.html), if not already installed.
-* Clone your project repository from GitHub (or GitLab or BitBucket) locally.
-* Manually create a `.lando.yml` file with your preferred configuration, based on the [WordPress recipe](https://docs.lando.dev/config/wordpress.html#configuration).
+* Clone this  project repository from BitBucket locally.
 * Run `lando start` to start Lando.
     - Save the local site URL. It should be similar to `https://<PROJECT_NAME>.lndo.site`.
 * Run `lando composer install --no-ansi --no-interaction --optimize-autoloader --no-progress` to download dependencies

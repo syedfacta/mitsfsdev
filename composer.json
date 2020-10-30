@@ -1,6 +1,6 @@
 {
-  "name": "pantheon-systems/example-wordpress-composer",
-  "description": "",
+  "name": "commonmedia/facta",
+  "description": "based for project with composer",
   "type": "project",
   "keywords": [],
   "repositories": [

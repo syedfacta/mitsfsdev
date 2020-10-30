@@ -1,0 +1,278 @@
+#footer {
+  .top-footer-wrapper {
+    background-color: $blue-tintgray;
+    padding: 100px 200px;
+    justify-content: space-evenly;
+    clear: both;
+    @include tablet {
+      padding: 40px 20px;
+    }
+
+    .column-0 {
+      color: $text-blue;
+    }
+
+    &__office {
+      margin-right: 20px;
+      width: 22%;
+      @include tablet {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      p.address-field{
+        margin: 0;
+      }
+    }
+
+    &__city {
+      @include text_big;
+      margin-bottom: 10px;
+    }
+
+    &__phone {
+      color: $text-blue;
+
+      label {
+        color: initial;
+      }
+    }
+
+    &__address {
+      width: 100%;
+      max-width: 227px;
+    }
+
+    &__button {
+      margin-top: 10px;
+      a{
+        @include blue-dark-button;
+      }
+    }
+  }
+
+  .bottom-footer-wrapper {
+    background-color: $dark-blue;
+    padding: 60px 200px;
+    background-image: url("../images/globe.svg");
+    background-repeat: no-repeat;
+    background-position: 2px -49px;
+    display: flex;
+    align-content: center;
+
+
+    @include tablet {
+      flex-wrap: wrap;
+      padding: 40px 20px;
+    }
+
+    &__left {
+      width: 50%;
+      margin-right: 20px;
+      @include tablet {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
+    &__social-media {
+      display: flex;
+      @include tablet {
+        flex-wrap: wrap;
+      }
+    }
+
+    &__title {
+      color: $white;
+      @include text_big;
+      font-size: 24px;
+      margin-right: 39px;
+    }
+
+    &__top_text {
+      color: $white;
+      margin: 20px 0;
+      max-width: 600px;
+      width: 100%;
+
+    }
+
+    &__social_icons {
+      margin-top: 10px;
+      @include tablet {
+        margin-top: 20px;
+      }
+      .linkedin {
+        content: url("../images/linkedin.svg");
+        margin-left: 59px;
+        @include tablet {
+          margin: 0;
+        }
+      }
+      .facebook {
+        content: url("../images/facebook.svg");
+        margin-left: 20px;
+      }
+      .twitter {
+        content: url("../images/twitter.svg");
+        margin-left: 20px;
+      }
+      .vimeo {
+        content: url("../images/vimeo.svg");
+        margin-left: 20px;
+      }
+      .instagram {
+        content: url("../images/instagram.svg");
+        margin-left: 20px;
+      }
+    }
+
+    &__menu_links{
+      display: flex;
+      flex-wrap: wrap;
+      > div{
+        margin: 10px 10px 0 0;
+        width: 47%;
+        a{
+          @include blue-button;
+        }
+      }
+
+    }
+    &__title_social{
+      color: $white;
+      margin-top: 10px;
+      @include tablet {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+
+    &__right {
+      width: 50%;
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    &__right_title{
+      color: $white;
+      @include text_big;
+    }
+
+    &__right_top_text {
+      color: $white;
+      margin-top: 20px;
+      max-width: 590px;
+      width: 100%;
+    }
+
+    &__image{
+      margin: 60px 0 0 300px;
+      @include tablet {
+        text-align: center;
+        margin: 60px 0;
+      }
+    }
+
+    form {
+      display: flex;
+      .gform_body {
+        @include tablet {
+          width: 100%;
+        }
+      }
+
+      .gfield_label {
+        display: none;
+      }
+
+      input[type="text"] {
+        border: 1px solid $white;
+        background-color: $dark-blue;
+        font-family: $font-sans;
+        font-size: $font-size-desktop;
+        color: $white;
+        height: 20px;
+        width: 345px;
+        @include tablet {
+          width: 100%;
+        }
+        &::placeholder {
+          font-family: $font-sans;
+          font-size: $font-size-desktop;
+          color: $white;
+        }
+      }
+
+      input[type="submit"] {
+        color: $white;
+        border: 1px solid $white;
+        width: 100%;
+        max-width: 133px;
+        height: 40px;
+        background-color: $darker-blue;
+        font-family: $font-sans;
+        font-size: $font-size-desktop;
+        border-left: none;
+        position: relative;
+      }
+
+      .gform_footer {
+        @include tablet {
+          padding-left: 20px;
+        }
+      }
+
+    }
+  }
+
+  .footer-menu {
+    background-color:  $darker-blue;
+    color: $white;
+    padding: 15px 188px;
+    font-size: 16px;
+    color: $gray-98-menu-links;
+    display: flex;
+    justify-content: end;
+    @include tablet {
+      justify-content: left;
+      padding: 15px 20px;
+    }
+    a {
+      color: $ellipse-16;
+      height: 17px;
+      line-height: 18px;
+    }
+
+    div,li {
+     padding: 0 12px;
+     height: 17px;
+     line-height: 18px;
+     border-right: 1px solid $gray-98-menu-links;
+     @include tablet {
+       height: inherit;
+       line-height: inherit;
+     }
+    }
+
+    .menu-item-last {
+      border: none;
+    }
+
+    div {
+      @include tablet {
+        border: none;
+      }
+    }
+
+    .menu-wrapper {
+      @include clearfix;
+      display: flex;
+    }
+  }
+
+  .gform_confirmation_message{
+    color: $white;
+  }
+}

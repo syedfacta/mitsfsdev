@@ -1,0 +1,121 @@
+.post-grid-two {
+  background-color: $c--bg;
+  color: $c--text;
+  padding: 100px 200px;
+
+  @include tablet {
+    padding: 100px;
+  }
+
+  @include mobile {
+    padding: 100px 10%;
+  }
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__terms {
+    padding: 0;
+  }
+
+  &__term {
+    width: 48%;
+    position: relative;
+    padding-bottom: 60px;
+    &:first-child{
+      padding-right: 20px;
+    }
+    @include tablet {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__term-posts {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 20px;
+    @include tablet {
+      border-bottom: 1px solid $gray-82;
+    }
+    &:hover{
+      h3{
+        color: $c--link;
+      }
+      .post-grid-two__post-cta{
+        margin-right: 3px;
+        transition: all 0.5s ease;
+      }
+      svg{
+        margin-left: 2px;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    h3{
+      color: $base-black;
+    }
+  }
+
+  &__term-title {
+    padding: 0 0 10px 98px;
+    text-transform: uppercase;
+    @include tablet {
+      padding: 0;
+
+    }
+
+  }
+
+  &__post-title {
+    padding-left: 20px;
+    max-width: 437px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-82;
+    @include tablet {
+      max-width: unset;
+      border-bottom: none;
+    }
+    h3 {
+      @include clearfix;
+    }
+  }
+
+  &__post-cta {
+    padding-top: 10px;
+    @include blue-dark-button;
+    a{
+      transition: all 0.5s ease;
+      svg{
+        transition: all 0.2s ease-in-out;
+        g{
+          fill: $c--link;
+        }
+      }
+      &:hover{
+        svg{
+          margin-left: 2px;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__term-see-all {
+    position: absolute;
+    bottom: 0;
+    @include blue-dark-button;
+    svg{
+      transition: all 0.2s ease-in-out;
+      g{
+        fill: $c--link;
+      }
+    }
+    &:hover{
+      svg{
+        margin-left: 2px;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}

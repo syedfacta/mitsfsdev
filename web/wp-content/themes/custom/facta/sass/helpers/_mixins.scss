@@ -1,0 +1,254 @@
+@mixin desktop-xl {
+  @media all and (min-width: 1024px) and (max-width: 2016px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+    @media all and (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media all and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin button {
+    &:after {
+        margin-left: 6px;
+        color: $text-blue;
+    }
+}
+
+@mixin blue-button {
+    @include button;
+    color: $ellipse-16;
+    &:after {
+        color: $ellipse-16;
+        content: url("../../images/ellipse-16-arrow.svg");
+        transition: all 0.2s ease-in-out;
+    }
+    &:hover{
+      &:after{
+        margin-left: 8px;
+      }
+    }
+}
+@mixin yellow-button {
+    @include button;
+    color: $light-yellow;
+    &:after {
+        color: $light-yellow;
+        transition: all 0.2s ease-in-out;
+        content: url("../../images/light-yellow-arrow.svg");
+    }
+    &:hover{
+      &:after{
+        margin-left: 8px;
+      }
+    }
+}
+@mixin orange-button {
+    @include button;
+    color: $orange-tint;
+    &:after {
+        color: $orange-tint;
+        transition: all 0.2s ease-in-out;
+        content: url("../../images/orange-tint-arrow.svg");
+    }
+    &:hover{
+      &:after{
+        margin-left: 8px;
+      }
+    }
+}
+
+@mixin red-button {
+    @include button;
+    color: $red-tint;
+    &:after {
+        color: $red-tint;
+        transition: all 0.2s ease-in-out;
+        content: url("../../images/red-tint-arrow.svg");
+    }
+    &:hover{
+      &:after{
+        margin-left: 8px;
+      }
+    }
+}
+
+@mixin purple-button {
+    @include button;
+    color: $Light-plus-purple;
+    &:after {
+        color: $Light-plus-purple;
+        transition: all 0.2s ease-in-out;
+        content: url("../../images/Light-plus-purple-arrow.svg");
+    }
+    &:hover{
+      &:after{
+        margin-left: 8px;
+      }
+    }
+}
+@mixin theme-button {
+    @include button;
+    color: $c--link;
+    &:after {
+        color: $c--link;
+        transition: all 0.2s ease-in-out;
+    }
+    &:hover{
+      &:after{
+        margin-left: 8px;
+      }
+    }
+}
+
+@mixin blue-dark-button {
+    @include button;
+    color: $c--link;
+    &:after {
+        color: $c--link;
+        transition: all 0.2s ease-in-out;
+    }
+    &:hover{
+      &:after{
+        margin-left: 8px;
+      }
+    }
+}
+
+@mixin border-button-orange {
+    display: inline-block;
+    @include orange-button;
+    @include text_big;
+    padding: 12px 20px;
+    border: 1px solid $orange-tint;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      background-color: $orange-tint;
+      transition: all 0.2s ease-in-out;
+      color: $c--bg;
+      &:after{
+        color: $c--bg;
+        margin-left: 6px;
+      }
+    }
+}
+
+@mixin border-button-red {
+    display: inline-block;
+    @include red-button;
+    @include text_big;
+    padding: 12px 20px;
+    border: 1px solid $red-tint;
+    &:hover{
+      background-color: $red-tint;
+      color: $c--bg;
+      &:after{
+        color: $c--bg;
+        margin-left: 6px;
+      }
+    }
+}
+
+@mixin border-button-dark-blue {
+    display: inline-block;
+    @include blue-dark-button;
+    @include text_big;
+    padding: 12px 20px;
+    border: 1px solid $text-blue;
+    &:hover{
+      background-color: $text-blue;
+      color: $c--bg;
+      &:after{
+        color: $c--bg;
+        margin-left: 6px;
+      }
+    }
+}
+
+@mixin text_big {
+    font-size: 22px;
+    line-height: 30px;
+    @include tablet {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    @include mobile {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+@mixin text_body{
+  p,a,ul,ol{
+    font-size: 18px;
+    color: $base-black;
+    line-height: 26px;
+    font-weight: normal;
+  }
+  ul,
+  ol{
+    margin-left: 20px;
+  }
+  blockquote{
+    border-left: 1px solid $text-blue;
+    padding-left: 20px;
+  }
+}
+
+@mixin normal_intro_desktop {
+    font-family: $font-serif;
+    font-style: $font-style;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    @include tablet {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    @include mobile {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+}
+
+@mixin big_intro_desktop {
+    font-family: $font-serif;
+    font-style: $font-style;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 44px;
+    @include tablet {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    @include mobile {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@mixin clearfix {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $site-wrapper;
+}

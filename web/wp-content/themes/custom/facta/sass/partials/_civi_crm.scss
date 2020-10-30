@@ -1,0 +1,61 @@
+#crm-container{
+  .thermometer-pointer{
+    top: -30px !important;
+  }
+}
+
+// supporter profile form
+#crm-container{
+  .help{
+    background-color: #fff;
+    border: none;
+    font-family: $font-sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $base-black;
+    margin-bottom: 0;
+  }
+  .crm-form-block{
+    background-color: $white !important;
+    fieldset{
+      padding: 0;
+      legend{
+        font-family: $font-sans;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 26px;
+        color: $base-black;
+      }
+      .crm-section{
+        .label{
+          width: auto;
+        }
+        .content{
+          margin-left: 0;
+        }
+      }
+    }
+    .crm-profile-name-supporter_profile{
+      border: none;
+      background-color: $white;
+    }
+    .crm-submit-buttons{
+      display: flex;
+      justify-content: flex-end;
+      height: auto;
+      margin: 0;
+      span.crm-button{
+        margin-right: 0;
+        background: none;
+        border: none;
+        i{
+          display: none;
+        }
+        input{
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}

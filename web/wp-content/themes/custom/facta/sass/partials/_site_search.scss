@@ -1,0 +1,61 @@
+.site-search {  
+  background-color: $c--bg-darker;
+  width: 100%;
+  height: 60px;
+  display: none;
+
+  @include tablet {
+    &:before {                        
+      display: block;
+      text-align: center;
+      transform: rotate(-180deg);
+      margin-bottom: -11px;
+      content: $c--arrow;
+    }    
+  }
+
+  &__arrow {
+    font-size: 36px;
+    position: absolute;
+    right: 27%;
+    margin-top: -45px;
+    @include tablet {
+      right: 20%;
+    }
+  }
+
+  form {
+    margin: 0 auto;
+  }
+
+  input {
+    background-color: $c--bg-darker;
+    color: $white;
+    border: none;
+    border-bottom: 1px solid $white;
+    width: 50%;    
+    font-size: 36px;
+    margin: 0 25%;
+
+    @include tablet {
+      border: 1px solid $c--bord-box-color;
+      width: 100%;    
+      margin: 0;
+    }
+
+    &:focus {      
+      border: none;
+      border-bottom: 1px solid $white;
+      @include tablet {
+        border: 1px solid $c--bord-box-color;
+      }      
+    } 
+
+    &::placeholder {
+      font-family: $font-sans;
+      font-size: 36px;
+      color: $white;
+    }
+  }
+
+}

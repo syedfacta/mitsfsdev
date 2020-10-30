@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  @include clearfix;
+  padding-bottom: 100px;
+
+  a,span {
+    padding: 10px;
+  }
+  .last, .first ,.disabled{
+    display: none;
+  }
+
+  .current {
+
+  }
+
+  .pagination-page-tilte {
+    padding: 10px 20px;
+  }
+}
+
+.pagination-block {
+  display: flex;
+  justify-content: flex-end;
+}

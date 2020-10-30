@@ -1,0 +1,186 @@
+.service-tiles {
+  background-color: $c--bg;
+  color: $c--text;
+  padding: 100px 200px;
+  @include tablet{
+    padding: 100px 30px;
+  }
+
+  &__wrapper{
+    @include wrapper;
+  }
+
+  &__intro-title {
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    padding-bottom: 60px;
+  }
+  &__tiles {
+    @include desktop-xl{
+      margin: unset;
+      padding: unset;
+    }
+  }
+
+  &__tile__title {
+    h2 {
+      max-width: 285px;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: $c--headline;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &__tile__excerpt{
+    p{
+      color: $c--text;
+      transition: all 0.1s ease-in-out;
+    }
+  }
+  &__tile.not-hoverable{
+    transition: inherit;
+    cursor: default;
+    > a{
+      cursor: default;
+    }
+    &:hover{
+      margin-top: 2px;
+      background-color: inherit;
+      border-top: inherit;
+      box-shadow: inherit;
+      transition: inherit;
+    }
+  }
+  &__tile {
+    > a{
+      display: flex;
+    }
+    display: flex;
+    align-items: flex-start;
+    width: 49%;
+    border-top: 2px solid transparent;
+    margin-bottom: 40px;
+    transition: all 0.3s ease-in-out;
+    &:nth-child(odd){
+      margin-right: 20px;
+    }
+    &:hover{
+      background-color: $white;
+      border-top: 2px solid $c--headline;
+      box-shadow: 0px 5px 15px $hover-box-shadow;
+      transition: all 0.3s ease-in-out;
+      .service-tiles__tile__cta{
+        a {
+          color: $c--headline;
+          transition: all 0.1s ease-in-out;
+        }
+        svg{
+          margin-left: 2px;
+          transition: all 0.3s ease-in-out;
+          g{
+            fill: $c--headline;
+            transition: all 0.1s ease-in-out;
+          }
+        }
+      }
+      .service-tiles__tile__title{
+        h2{
+          color: $c--headline;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+      .service-tiles__tile__excerpt{
+        p{
+          color: $base-black;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+    }
+    @media all and (max-width: $service-tiles-bp){
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    @include tablet{
+      background-color: $white;
+      border-top: 2px solid var(--c--headline);
+    }
+
+    &__left-content {
+      width: 50%;
+      img {
+        @include clearfix;
+        @include image;
+        object-fit: contain;
+        margin: 0 0 -7px 0;
+        min-width: 176px;
+        @include mobile{
+          min-width: unset;
+        }
+      }
+      @include mobile{
+        width: 30%;
+      }
+    }
+
+    &__right-content {
+      padding: 20px;
+      width: 50%;
+      @include mobile{
+        width: 70%;
+      }
+    }
+
+    &__cta {
+      a {
+        padding-top: 10px;
+        @include theme-button;
+        @include text_big;
+        transition: all 0.1s ease-in-out;
+      }
+      svg{
+        transition: all 0.2s ease-in-out;
+        g{
+          fill: $c--link;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+      &:hover{
+        svg{
+          margin-left: 2px;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+// if background color theme is dark-blue, dark-purple or dark-green, uses different hover color 
+.service-tiles.module--dark-blue,
+.service-tiles.module--dark-purple,
+.service-tiles.module--dark-green{
+  .service-tiles__tile{
+    &:hover{
+      .service-tiles__tile__cta{
+        a {
+          color: $c--bg;
+          transition: all 0.1s ease-in-out;
+        }
+        svg{
+          margin-left: 2px;
+          transition: all 0.3s ease-in-out;
+          g{
+            fill: $c--bg;
+            transition: all 0.1s ease-in-out;
+          }
+        }
+      }
+      .service-tiles__tile__title{
+        h2{
+          color: $c--bg;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+}

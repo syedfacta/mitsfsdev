@@ -1,0 +1,52 @@
+.form-contact-us {
+  padding: 0 120px;
+  color: $gray-32-text;
+
+  input[type="text"] {
+    height: 60px;
+    width: 370px;
+  }
+
+  .name_first, .ginput_left {
+    width: 50%;
+  }
+
+  .name_last, .ginput_right {
+    width: 50%;
+  }
+
+  label {
+    display: block;
+  }
+
+  .ginput_container_name, .ginput_container_email{
+    width: 100%;
+    display: flex;
+  }
+  
+  .gfield_label {
+    display: none;
+  }
+  
+  
+  .information-field {    
+    label {
+      @include text_big;
+      color: $base-black;
+      display: block;
+    }
+    
+  }
+  
+  .gfield {
+    margin-top: 20px;
+  }
+  
+  input[type="submit"] {
+    margin: 20px 0;
+    @include border-button-dark-blue;    
+    background-color: $white;
+  }
+  
+  
+}

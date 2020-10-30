@@ -1,0 +1,150 @@
+.post-type-event {
+  background-color: $c--bg;
+  color: $white;
+  @include text_big;
+
+  @include tablet {
+    display: flex;
+  }
+
+  &__wrapper {
+    @include wrapper;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include tablet {
+      flex-direction: column-reverse;
+      padding: 0 5%;
+    }
+
+  }
+
+  &__title {
+    padding: 20px 0;
+  }
+
+  &__right {
+    width: 50%;
+    img {
+      @include image;
+      margin-bottom: -40px;
+      max-width: 690px;
+      @include tablet {
+        margin-bottom: 40px;
+        max-width: inherit;
+      }
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__left {
+    width: 50%;
+    h1 {
+      margin: 0px 40px 10px 0;
+    }
+    @include tablet {
+      width: 100%;
+      margin: 40px 0;
+    }
+  }
+
+  &__text {
+    @include text_big;
+    color: $blue-tintgray;
+    max-width: 510px;
+    width: 100%;
+    padding-right: 40px;
+    padding-top: 20px;
+    @include tablet {
+      max-width: unset;
+    }
+    a{
+      @include blue-dark-button;
+    }
+  }
+
+  &__cta {
+    margin: 30px 0;
+    a {
+      @include border-button-red;
+    }
+  }
+
+  &__content, &__content p {
+    @include big_intro_desktop;
+    color: $base-black;
+  }
+
+  &__content {
+    @include wrapper;
+    width: unset;
+    padding: 60px 200px 0;
+    @include tablet{
+      padding: 0px 30px;
+    }
+  }
+
+  &__event-info{
+    margin-top: 70px;
+    @include tablet{
+      margin-top: 30px;
+    }
+    @include desktop-xl{
+      margin: unset;
+      padding: unset;
+    }
+  }
+
+  &__date{
+    margin-right: 25%;
+  }
+  &__date, &__location {
+    font-family: $font-sans;
+    font-size: $font-size-desktop;
+    font-weight: $font-weight;
+    line-height: $line-height-desktop;
+    color: $base-black;
+
+    h5 {
+      color: $c--text;
+      margin: 0 0 5px 0;
+    }
+
+    div {
+      max-width: 155px;
+    }
+  }
+
+  &__location {
+    div {
+      max-width: 273px;
+    }
+
+    a {
+      @include clearfix;
+      border: none;
+      color: $c--link;
+      font-size: $font-size-desktop;
+      font-weight: $font-weight;
+      line-height: $line-height-desktop;
+      &:after {
+        content: url("../images/purple-button-square.svg");
+      }
+    }
+  }
+
+  &__event-text {
+    @include wrapper;
+    max-width: 895px;
+    width: 100%;
+    margin-bottom: 100px;
+    @include text_body;
+    a {
+      font-size: 18px;
+      text-decoration: underline;
+    }
+  }
+}

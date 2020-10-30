@@ -1,0 +1,116 @@
+.cnam-slideshow {
+  padding: 100px 0;
+  background-color: $c--bg;
+  color: $c--text;
+  @include tablet{
+    padding: 60px 0;
+  }
+  &__slider{
+    width: 100%;
+    position: relative;
+    @include wrapper;
+    img {
+      width: 980px;
+      height: 590px;
+      margin: 0 15%;
+      object-fit: contain;
+      @include tablet{
+        width: 100%;
+        height: inherit;
+      }
+    }
+    p{
+      margin: 18px 15%;
+      transform: translateX(14%);
+      text-align: center;
+    }
+    .slick-arrow{
+      position: absolute;
+      z-index: 1;
+      height: 86.5%;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .slick-prev{
+      left: 0;
+      transform: rotate(180deg);
+      width: 99px;
+      &:after{
+        content: url("../../images/slideshow-arrows.svg");
+        transform: scale(.8);
+        filter: opacity(0%);
+      }
+    }
+    .slick-next{
+      right: 0;
+      top: 0;
+      &:after{
+        content: url("../../images/slideshow-arrows.svg");
+        transform: scale(.8);
+        filter: opacity(0%);
+      }
+    }
+
+  }
+
+  &__slide{
+    &:focus {
+      outline: 0 !important;
+    }
+  }
+
+  &__title {
+    padding: 0 200px;
+    max-width: 1600px;
+    margin: 0 auto 60px;
+    @include tablet{
+      padding: 60px 0;
+    }
+  }
+
+  .slick-dots {
+    @include clearfix;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    li {
+      margin: 0 10px;
+      &:before{
+        display: none;
+      }
+
+      button {
+        border: 1px solid $c--dots-inactive;
+      }
+    }
+
+    li.slick-active {
+      button {
+        border: 1px solid $c--dots-active;
+      }
+
+    }
+
+    button{
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: none;
+      background-color: $c--bg;
+      font-size: 0;
+      &:focus {
+        outline: 0 !important;
+      }
+    }
+  }
+
+  .slick-list {
+    .slick-track{
+      margin-left: 18%;
+    }
+  }
+
+}

@@ -1,0 +1,59 @@
+.intro-block {
+  background-color: $c--bg;
+  color: $c--text;
+  @include desktop-xl {
+    margin: unset;
+    padding: 0 200px;
+  }
+
+  &__container {
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: inherit;
+      width: 90%;
+      padding-top: 40px;
+    }
+  }
+
+  &__right {
+    padding: 110px 0 60px 0;
+    font-family: $font-serif;
+    width: 75%;
+    @include big_intro_desktop;
+    @include tablet {
+      width: 100%;
+      padding: 20px 0 40px;
+    }
+
+  }
+
+  &__left {
+    width: 25%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__cta {
+    font-family: $font-sans;
+    font-weight: $font-weight;
+    a {
+      @include blue-dark-button;
+      @include text_big;
+    }
+    svg{
+      transition: all 0.2s ease-in-out;
+      g{
+        fill: $c--link;
+      }
+    }
+    &:hover{
+      svg{
+        margin-left: 2px;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}

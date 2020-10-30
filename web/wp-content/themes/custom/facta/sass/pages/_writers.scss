@@ -1,0 +1,153 @@
+.writers_page {
+  margin: 0 auto 100px;
+  &__heading{
+    margin-bottom: 60px;
+    padding: 60px 200px;
+    background: radial-gradient(100% 100% at 100% 100%, rgba(9, 214, 194, 0.5) 0%, rgba(77, 153, 146, 0) 100%), radial-gradient(102.5% 102.5% at 0% 0%, rgba(152, 0, 101, 0.5) 0%, rgba(128, 45, 100, 0) 100%), #5C5CE6;
+    @include tablet{
+      padding: 60px;
+    }
+    @include mobile{
+      padding: 60px 20px;
+    }
+    h2{
+      margin-bottom: 0;
+      margin-top: 0;
+      color: $white;
+    }
+    p{
+      margin-top: 0;
+      color: $white;
+      span{
+        font-style: italic;
+      }
+    }
+  }
+
+  &__create-button{
+    padding: 0px 200px 60px;
+    max-width: 1600px;
+    margin: 0 auto;
+    @include tablet{
+      padding: 0 60px 30px;
+    }
+    @include mobile{
+      padding: 0 20px 30px;
+    }
+    a{
+      @include border-button-dark-blue;
+      display: inline-block;
+      padding: 10px 20px;
+      &:hover{
+        color: $white;
+      }
+    }
+  }
+
+  &__help {
+    display: flex;
+    align-items: flex-end;
+    padding: 0px 200px 10px;
+    max-width: 1600px;
+    margin: 50px auto;    
+    @include tablet{
+      padding: 0px 20px 10px;
+    }    
+  }
+  
+  
+  &__content {
+    padding: 0px 200px 10px;
+    max-width: 1600px;
+    margin: 0 auto;
+    @include tablet{
+      padding: 0px 20px 10px;
+    }    
+  }
+  
+  
+  &__form{
+    display: flex;
+    align-items: flex-end;
+    padding: 0px 200px 10px;
+    max-width: 1600px;
+    margin: 50px auto;
+    @include tablet{
+      padding: 0 60px;
+    }
+    @include mobile{
+      padding: 0 20px;
+    }
+    .writers-form-input{
+      display: flex;
+      flex-direction: column;
+      margin-right: 10px;
+      width: 100%;
+      input,
+      label{
+        width: 100%;
+        max-width: 345px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+      .writers_page_search{
+        @include border-button-dark-blue;
+        padding: 0 20px;
+        height: 40px;
+        max-width: 150px;
+        &:hover{
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__headers {
+    > div {
+      font-weight: 700;
+      background-color: $dark-blue;
+      a{
+        color: $white;
+      }
+    }
+    margin: 0px 200px;
+    @include tablet{
+      margin: 60px;
+    }
+    @include mobile{
+      margin: 60px 20px;
+    }
+  }
+
+  &__record {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 200px;
+    max-width: 1600px;
+    @media all and (min-width: 2000px){
+      margin: 0 auto;
+    }
+    @include tablet{
+      margin: 60px;
+    }
+    @include mobile{
+      margin: 60px 20px;
+    }
+    &:nth-child(even){
+      background-color: $gray-90;
+    }
+
+    div {
+      padding: 10px 20px;
+      box-sizing: border-box;
+      width: 33.3%;
+    }
+    .writers_page__record-raised,
+    .writers_page__record-title,
+    .writers_page__record-name{
+      display: flex;
+      align-items: center;
+    }
+  }
+}

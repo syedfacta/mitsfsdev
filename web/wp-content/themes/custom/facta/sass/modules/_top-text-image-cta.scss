@@ -1,0 +1,105 @@
+.top-text-image-cta {
+  background-color: $c--bg;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @include tablet {
+    display: flex;
+  }
+
+  &__wrapper {
+    @include wrapper;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include tablet {
+      flex-direction: column-reverse;
+      padding: 0 5%;
+    }
+
+  }
+
+  &__right {
+    width: 50%;
+    img {
+      @include image;
+      margin-bottom: -40px;
+      max-width: 690px;
+      @include tablet {
+        margin-bottom: 40px;
+        max-width: inherit;
+      }
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__left {
+    width: 50%;
+    h1 {
+      color: $white;
+      margin: 0px 40px 10px 0;
+    }
+    @include tablet {
+      width: 100%;
+      margin: 40px 0;
+    }
+  }
+
+  &__text {
+    @include text_big;
+    color: $blue-tintgray;
+    max-width: 510px;
+    width: 100%;
+    padding-right: 40px;
+    margin: 20px 0;
+    @include tablet {
+      max-width: unset;
+    }
+  }
+
+  &__cta {
+    margin-top: 20px;
+    border: 1px solid $orange-tint;
+    display: inline-block;
+    position: relative;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      @include border-button-orange;
+      border: none;
+      padding: 12px 40px 12px 20px;
+      &:after{
+        content: "";
+      }
+    }
+    svg{
+      position: absolute;
+      margin-right: 12px;
+      margin-top: 4px;
+      g{
+        fill: $orange-tint;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+    &:hover{
+      svg{
+        g{
+          fill: $c--bg;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+  &__body {
+    padding: 100px 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    @include text_body;
+    @include tablet{
+      padding: 30px;
+    }
+  }
+}

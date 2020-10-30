@@ -1,0 +1,88 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+//Colors
+
+//Dark colors
+$text-blue: #2156a6;
+$dark-blue: #163159;
+$base-black: #050505;
+$darker-blue: #132A4D;
+$dark-green: #155952;
+$sub-dark-green: #124D47;
+$green-text: #357A73;
+$dark-purple: #5D2E66;
+$dark-plus-purple: #451F4D;
+$prpl-text: #6D2E73;
+$red-text: #A62942;
+
+$error: #A62942;
+
+
+//Light colors
+$light-yellow: #ffefbf;
+$ellipse-16: #BFD9FF;
+$light-blue: #5C93E6;
+$light-plus-blue: #BFD9FF;
+$light-green: #30A195;
+$light-plus-green: #BEEDE8;
+$orange-tint: #FFECD9;
+$light-purple: #AB59B3;
+$Light-plus-purple: #FCD9FF;
+$red-tint: #FFF0F3;
+$green-tint:#F0FAF9;
+$yellow-tint: #FFF9E5;
+
+//Shadows
+$hover-box-shadow: rgba(22, 49, 89, 0.3);
+$slideshow-arrow-box: rgba(255, 255, 255, 0.2);
+$light-gray-shadow: rgba(69, 73, 77, 0.1);
+
+//Neutrals
+$white: #fff;
+$blue-tintgray: #f2f5fa;
+$gray-98-menu-links: #E4E6EB;
+$gray-42-text-inactive: #696A6B;
+$gray-32-text: #505152;
+$gray-90: #f5f5f5;
+$gray-82: #CBCDD1;
+
+//Typography
+$font-sans: Source Sans Pro;
+$font-serif: Source Serif Pro;
+
+$font-size-desktop: 18px;
+$font-size-tablet: 18px;
+$font-size-mobile: 16px;
+
+$line-height-desktop: 26px;
+$line-height-tablet: 26px;
+$line-height-mobile: 22px;
+
+$font-weight: normal !default;
+$font-style: normal !default;
+
+//slideshow dots
+$dark-purple-dots: #FEF0FF;
+$dark-purple-active-dots: #AB59B2;
+$dark-blue-dots: $light-plus-blue;
+$dark-blue-active-dots: #5C93E5;
+$dark-green-dots: $green-tint;
+$dark-green-active-dots: $light-plus-green;
+$light-purple-dots: #AB59B2;
+$light-purple-active-dots: $prpl-text;
+$light-blue-dots: #5C93E5;
+$light-blue-active-dots: $prpl-text;
+$light-green-dots: $light-green;
+$light-green-active-dots: $dark-green;
+$light-orange-dots: #E58422;
+$light-orange-active-dots: #C75300;
+$light-yellow-dots: #D86179;
+$light-yellow-active-dots: #732232;
+
+//widths
+$site-wrapper: 1600px;
+$content-wrapper: 1200px;
+$body-wrapper: 895px;
+$service-tiles-bp :1398px;

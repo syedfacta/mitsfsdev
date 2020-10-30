@@ -1,0 +1,46 @@
+.popmake-content {
+  color: $gray-32-text;
+  background-color: $white;
+
+  .purple {
+    color: $prpl-text;
+  }
+
+  .black {
+    color: $base-black;
+  }
+
+  .popup-header {
+    padding: 40px 120px;
+    background-color: $blue-tintgray;
+    border: 1px solid $gray-98-menu-links;
+    
+    &__title {
+      border-bottom: 1px solid $gray-98-menu-links;
+    }
+    
+    &__content {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  h3 {
+    @include clearfix;
+    color: $base-black;
+  }
+
+}
+
+.popmake-close {
+  width: 60px !important;
+  height: 60px !important;
+  border: 1px solid $gray-98-menu-links !important;
+  background-image: url(../images/closex.svg);
+  background-image: url(../images/closex.svg) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;  
+  font-size: 0 !important;
+}
+

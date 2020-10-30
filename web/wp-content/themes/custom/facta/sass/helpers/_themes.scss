@@ -1,0 +1,69 @@
+// List out all the colors
+//name              c--text       c--link        c--bg     c--bg-darker            c--bord-box-color   c--line-color
+
+$colors-themes:
+  'blue'          $text-blue      $text-blue    $dark-blue    $darker-blue          $light-blue       $dark-blue ,
+  'green'         $green-text     $green-text   $dark-green   $sub-dark-green       $light-green      $dark-green,
+  'purple'        $prpl-text      $prpl-text    $dark-purple  $dark-plus-purple     $light-purple     $dark-purple;
+
+// loop over the colors
+@for $i from 1 through length($colors-themes) {
+
+  // set the current color theme
+  $color-theme: nth($colors-themes, $i);
+
+  // loop over that color theme to set variables
+  $name: nth($color-theme, 1);
+  $c--text: nth($color-theme, 2);
+  $c--link: nth($color-theme, 3);
+  $c--bg: nth($color-theme, 4);
+  $c--bg-darker: nth($color-theme, 5);
+  $c--bord-box-color: nth($color-theme, 6);
+  $c--line-color: nth($color-theme, 7);
+
+  // if it is the first theme, set :root custom propertie
+  @if $i == 1 {
+    :root {
+      --c-text: #{$c--text};
+      --c--headline: #{$c--text};
+      --c-link: #{$c--link};
+      --c-bg: #{$c--bg};
+      --c-bg-darker: #{$c--bg-darker};
+      --c-bord-box-color: #{$c--bord-box-color};
+      --c-line-color: #{$c--line-color};
+    }
+  }
+
+  // reset the rest of the properties scoped under the active theme class
+  .theme--#{$name},
+  .header-wrapper-#{$name} {
+    --c-text: #{$c--text};
+    --c--headline: #{$c--text};
+    --c-link: #{$c--link};
+    --c-bg: #{$c--bg};
+    --c-bg-darker: #{$c--bg-darker};
+    --c-bord-box-color: #{$c--bord-box-color};
+    --c-line-color: #{$c--line-color};
+    --c-arrow: url("../images/#{$name}-menu-arrow.svg");
+  }
+
+  .header-wrapper-#{$name} {
+    box-shadow: 0px 5px 15px #{$c--bg}E8;
+    transition: all 0.3s;
+    li.menu-item-has-children {
+      > a {
+        &:after {
+          content: url("../images/#{$name}-menu-arrow.svg");
+        }
+      }
+    }
+  }
+}
+
+$c--text: var(--c-text);
+$c--link: var(--c-link);
+$c--bg: var(--c-bg);
+$c--bg-darker: var(--c-bg-darker);
+$c--bord-box-color: var(--c-bord-box-color);
+$c--line-color: var(--c-line-color);
+$c--arrow: var(--c-arrow);

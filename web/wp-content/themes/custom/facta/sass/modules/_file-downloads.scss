@@ -1,0 +1,83 @@
+.file-downloads {
+    background-color: $c--bg;
+    color: $c--text;
+    padding: 60px 200px 145px;
+    @include tablet{
+      padding: 40px 30px;
+    }
+
+    &__wrapper {
+        @include wrapper;
+      }
+
+    &__title {
+        padding: 0 0 10px 0;
+        color: var(--c--headline);
+        text-transform: uppercase;
+        @include tablet {
+          padding: 0;
+        }
+    }
+    &__groups {
+        display: flex;
+        align-items: flex-start;
+        margin: 70px 10px 0;
+        padding: 12px 30px;
+        border-top: 2px solid transparent;
+        width: 40%;
+        transition: all 0.2s ease-in-out;
+        @include tablet {
+          border-top: 2px solid var(--c--headline);
+          width: auto;
+          padding: 10px;
+          margin-top: 22px;
+          background-color: $white;
+
+        }
+      &:hover{
+        border-top: 2px solid var(--c--headline);
+        background-color: $white;
+        box-shadow: 0px 8px 60px $light-gray-shadow;
+        transition: all 0.2s ease-in-out;
+        h3{
+          color: var(--c--headline);
+          transition: all 0.1s ease-in-out;
+        }
+      }
+    }
+
+    &__group {
+        padding-left: 58px;
+    }
+
+    &__list {
+      @include desktop-xl{
+        margin: unset;
+        padding: unset;
+      }
+      @include tablet {
+        padding: 0;
+      }
+    }
+
+    &__file-downloads {
+        width: 50%;
+    }
+    &__subtitle {
+        h3 {
+            margin: 0;
+            transition: all 0.1s ease-in-out;
+        }
+        margin: 0;
+        color: $c--text;
+    }
+    &__download{
+        padding-top: 10px;
+        &:hover{
+          opacity: 0.8;
+        }
+        img{
+          padding-left: 6px;
+        }
+      }
+}

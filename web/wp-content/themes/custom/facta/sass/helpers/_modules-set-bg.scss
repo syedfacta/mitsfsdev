@@ -1,0 +1,51 @@
+// List out all the colors for the background in the modules
+//name                 c--text         c--link       c--bg        c--headline    c--dots-active  c--dots-inactive
+
+$colors-themes:
+  'white-default'      $base-black    "inherit"        $white        "inherit"   $c--bord-box-color    $gray-98-menu-links ,
+  'dark-purple'        $white      $Light-plus-purple   $dark-purple    $white  $dark-purple-active-dots     $dark-purple-dots ,
+  'dark-blue'          $white      $light-plus-blue    $dark-blue    $white     $dark-blue-active-dots     $dark-blue-dots ,
+  'dark-green'         $white      $light-plus-green    $dark-green    $white $dark-green-active-dots     $dark-green-dots ,
+  'light-purple'       $base-black     "inherit"    $red-tint    "inherit"  $light-purple-active-dots     $light-purple-dots ,
+  'light-blue'         $base-black      "inherit"    $blue-tintgray    "inherit"  $light-blue-active-dots      $light-blue-dots  ,
+  'light-green'        $base-black      "inherit"    $green-tint     "inherit"  $light-green-active-dots     $light-green-dots ,
+  'light-orange'       $base-black      "inherit"    $orange-tint   "inherit"   $light-orange-active-dots     $light-orange-dots ,
+  'light-yellow'       $base-black     "inherit"    $yellow-tint    "inherit"   $light-yellow-active-dots     $light-yellow-dots ;
+
+// loop over the colors
+@for $i from 1 through length($colors-themes) {
+
+  // set the current color theme
+  $color-theme: nth($colors-themes, $i);
+
+  // loop over that color theme to set variables
+  $name: nth($color-theme, 1);
+  $c--text: nth($color-theme, 2);
+  $c--link: nth($color-theme, 3);
+  $c--bg: nth($color-theme, 4);
+  $c--headline: nth($color-theme, 5);
+  $c--dots-active: nth($color-theme, 6);
+  $c--dots-inactive: nth($color-theme, 7);
+
+  // reset the rest of the properties scoped under the active module class
+  .module--#{$name}  {
+    --c-text: #{$c--text};
+    --c-link: #{$c--link};
+    --c-bg: #{$c--bg};
+    --c--headline: #{$c--headline};
+    --c-dots-active: #{$c--dots-active};
+    --c-dots-inactive: #{$c--dots-inactive};
+  }
+}
+
+.module-theme-headline {
+  color: var(--c--headline);
+  text-transform: uppercase;
+}
+
+$c--text: var(--c-text);
+$c--link: var(--c-link);
+$c--bg: var(--c-bg);
+$c--headline: var(--c--headline);
+$c--dots-active: var(--c-dots-active);
+$c--dots-inactive: var(--c-dots-inactive);

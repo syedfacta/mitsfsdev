@@ -1,0 +1,61 @@
+.gform_body {
+  color: $base-black;
+  
+  ul {
+    @include clearfix;
+  }
+  
+}
+
+input[type="text"], textarea {
+  background-color: $blue-tintgray;
+  border: 1px solid $blue-tintgray;
+  padding: 9px;
+  width: 345px;
+  height: 40px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $text-blue;
+  }
+
+}
+
+textarea {
+  width: 790px;
+  height: 200px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.validation_error { 
+  display: none;
+}
+
+.validation_message{
+  color: $error;
+}
+
+label {
+  color: $gray-32-text;
+}
+
+.gfield_contains_required {
+  label {
+    &:after {
+      content: "*";
+      color: $text-blue;
+    }
+  }
+}
+
+.gform_title {
+  @include big_intro_desktop();
+  font-family: inherit;
+}
+
+.gsection_title {
+  @include text_big();
+}

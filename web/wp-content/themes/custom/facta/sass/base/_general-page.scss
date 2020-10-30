@@ -1,0 +1,54 @@
+.theme-general {
+  &__header {
+    background: radial-gradient(100% 100% at 100% 100%, rgba(9, 214, 194, 0.5) 0%, rgba(77, 153, 146, 0) 100%), radial-gradient(102.5% 102.5% at 0% 0%, rgba(152, 0, 101, 0.5) 0%, rgba(128, 45, 100, 0) 100%), #5C5CE6;
+    color: $white;
+  }
+
+  &__header-container {
+    margin: 0 auto;
+    max-width: $site-wrapper;
+    padding: 80px 200px 60px;
+    @include tablet{
+      padding: 80px 30px 30px;
+    }
+  }
+
+  &__title {
+    padding: 0px 0 60px;
+    h1 {
+      width: 100%;
+      max-width: 895px;
+      @include clearfix;
+    }
+  }
+
+  &__breadcrumb {
+    text-transform: uppercase;
+    a{
+      text-decoration: underline;
+      color: $white;
+    }
+  }
+
+  &__content {
+    margin: 60px auto;
+    max-width: $body-wrapper;
+    padding: 0 200px;
+    @include tablet{
+      padding: 0 30px;
+    }
+  }
+}
+
+.short-header {
+  .theme-general__header {
+    background: radial-gradient(98.5% 98.5% at 0% 1.5%, rgba(58, 230, 213, 0.25) 0%, rgba(90, 255, 240, 0) 100%), radial-gradient(100% 100% at 98.5% 100%, rgba(244, 129, 255, 0.5) 0%, rgba(128, 70, 118, 0) 100%), #8B4599;
+    min-height: 220px;
+    .theme-general__header-container{
+      padding: 100px 200px 0 200px;
+      @include tablet{
+        padding: 100px 30px 0;
+      }
+    }
+  }
+}

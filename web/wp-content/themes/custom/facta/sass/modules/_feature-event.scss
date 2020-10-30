@@ -1,0 +1,79 @@
+.feature-event {
+  background-color: $dark-blue;
+  align-items: center;
+  flex-wrap: revert;
+  padding: 40px 0 0 0;
+  @media all and (min-width: $site-wrapper){
+    padding: 40px 200px 0;
+  }
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  &__image {
+    img{
+      @include image;
+      max-width: 620px;
+      margin-bottom: -60px;
+      @include tablet {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  &__right-content {
+
+    .naturalization {
+      color: $light-yellow;
+      font-family: $font-sans;
+      font-size: 22px;
+      margin-left: 40px;
+      @include tablet {
+        margin: 10px 0;
+      }
+    }
+
+    .content{
+      color: $blue-tintgray;
+      font-family: $font-sans;
+      font-size: 22px;
+      margin: 20px 220px 20px 40px;
+      max-width: 615px;
+      line-height: 30px;
+      @include tablet {
+        margin: 10px;
+      }
+
+    }
+
+    h1 {
+      color: $white;
+      margin: 20px 0 0 40px;
+      max-width: 615px;
+      @include tablet {
+        margin: inherit;
+
+        width: 100%;
+      }
+      &:hover {
+        color:$light-yellow;
+      }
+    }
+
+  }
+
+  &__cta{
+    margin-top: 30px;
+    a {
+      @include yellow-button;
+      margin-left: 40px;
+      @include tablet {
+        margin: 10px 0;
+      }
+    }
+  }
+
+}
